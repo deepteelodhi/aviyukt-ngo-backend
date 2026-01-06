@@ -47,6 +47,7 @@ const sendOtpEmail = async (email, otp) => {
   try {
     const info = await transporter.sendMail(mailOptions);
     console.log("OTP email sent:", info.response);
+    
   } catch (error) {
     console.error("Error sending OTP email:", error);
   }
@@ -55,7 +56,7 @@ const sendOtpEmail = async (email, otp) => {
 
 
 
-// User Registration ✅
+// User Registration 
 const register = async (req, res) => {
   const { fullname, email, password } = req.body;
 
@@ -91,12 +92,12 @@ const register = async (req, res) => {
 };
 
 
-// Verify OTP ✅  
+// Verify OTP   
 const verifyOtp = async (req, res) => {
   const { email, otp } = req.body;
 
-  console.log("Received OTP:", otp); // Log the received OTP for debugging
-  console.log("Received email:", email); // Log the received email for debugging
+  console.log("Received OTP:", otp); 
+  console.log("Received email:", email);
 
   try {
     const user = await userModel.findOne({ email });
@@ -104,7 +105,7 @@ const verifyOtp = async (req, res) => {
     if (!user) {
       return res.status(400).json({ message: "User not found" });
     }
-    console.log("User otp1:", user.otp); // Log the user object for debugging
+    console.log("User otp1:", user.otp); 
     if (user.otp !== otp) {
       return res.status(400).json({ message: "Invalid OTP" });
     }
@@ -124,7 +125,7 @@ const verifyOtp = async (req, res) => {
   }
 };
 
-// User Login ✅
+// User Login 
   const userLogin = async (req, res) => {
     const { email, password } = req.body;
 
