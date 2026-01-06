@@ -16,7 +16,7 @@ const cookieParser = require("cookie-parser");
 app.use(morgan("tiny")); 
 const allowedOrigins = [
   'http://localhost:5173',
-  'https://aviyukt-ngo-frontend.vercel.app',
+  'https://aviyukt-ngo-frontend-git-main-ankesh1.vercel.app',
   'https://www.aviyuktngo.org',
 ];
 
